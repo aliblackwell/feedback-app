@@ -40,5 +40,10 @@ form.addEventListener('submit', event => {
   })
 })
 
-db.replicate.to('https://feedback-app-db-server.aliblackwell.me:6984')
 
+var remoteDB = new PouchDB('https://feedback-app-db-server.aliblackwell.me:6984/app_database')
+db.replicate.to(remoteDB).on('complete', function () {
+  // yay, we're done!
+}).on('error', function (err) {
+  // boo, something went wrong!
+});
