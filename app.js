@@ -40,5 +40,5 @@ form.addEventListener('submit', event => {
   })
 })
 
-// db.replicate.to('https://feedback-app-db-server.aliblackwell.me')
+db.replicate.to('https://feedback-app-db-server.aliblackwell.me:6984')
 
